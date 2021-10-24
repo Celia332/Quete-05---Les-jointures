@@ -1,0 +1,28 @@
+1/
+mysql> SELECT lastname, firstname, role, team.name
+    -> FROM player 
+    -> INNER JOIN wizard ON wizard.id = wizard_id
+    -> INNER JOIN team ON team.id = team_id
+    -> ORDER BY team, name, role, lastname, firstname;
+
+
+
+
+
+
+2/
+mysql> SELECT firstname, lastname 
+    -> FROM player 
+    -> INNER JOIN wizard ON player.wizard_id = wizard.id 
+    -> WHERE role ='seeker' 
+    -> ORDER BY lastname ASC, firstname ASC;
+        
+        
+     
+
+
+3/
+mysql> SELECT lastname, firstname 
+    -> FROM wizard 
+    -> LEFT JOIN player 
+    -> ON wizard.id = wizard_id WHERE wizard_id=wizard.id IS NULL;
